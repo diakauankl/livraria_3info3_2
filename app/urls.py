@@ -29,6 +29,7 @@ router.register(r'categorias', CategoriaViewSet, basename='categorias')
 router.register(r'editoras', EditoraViewSet, basename='editoras')
 router.register(r'livros', LivroViewSet, basename='livros')
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     # OpenAPI 3
