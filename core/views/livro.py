@@ -1,7 +1,7 @@
 from rest_framework.viewsets import ModelViewSet
 
 from core.models import Livro
-from core.serializers import LivroListRetrieveSerializer, LivroSerializer
+from core.serializers import LivroListSerializer, LivroRetrieveSerializer, LivroSerializer
 
 
 class LivroViewSet(ModelViewSet):
@@ -10,5 +10,7 @@ class LivroViewSet(ModelViewSet):
 
     def get_serializer_class(self):
         if self.action in {'list', 'retrieve'}:
-            return LivroListRetrieveSerializer
+            return LivroListSerializer
+        elif self.action == 'retrieve':
+            return LivroRetrieveSerializer
         return LivroSerializer
